@@ -1,23 +1,86 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Players List</title>
-</head>
-<body>
-    <h1>Players</h1>
-    <a href="{% url 'home' %}">Back to Home</a>
-    <ul>
-        {% for player in players %}
-            <li>
-                {{ player.player_name }} — {{ player.player_position }} — {{ player.player_club.club_name }}
-                {% if player.player_photo %}
-                    <br>
-                    <img src="{{ player.player_photo.url }}" width="100">
-                {% endif %}
-            </li>
-        {% empty %}
-            <li>No players available</li>
+{% extends 'footapp/base.html' %}
+
+{% block content %}
+<div style="max-width: 800px; margin: 0 auto; padding: 20px;">
+
+  <h1 style="text-align:center; margin-bottom: 20px;">Players</h1>
+
+  <!-- FILTER FORM -->
+  <form method="get" style="display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 30px;">
+    <div>
+      <label>Country:</label><br>
+      <input type="text" name="country" value="{{ selected_country }}" placeholder="e.g. Argentina">
+    </div>
+
+    <div>
+      <label>Club:</label><br>
+      <select name="club">
+        <option value="">All clubs</option>
+        {% for club in clubs %}
+          <option value="{{ club.id }}" {% if club.id|stringformat:"s" == selected_club %}selected{% endif %}>
+            {{ club.club_name }}
+          </option>
         {% endfor %}
-    </ul>
-</body>
-</html>
+      </select>
+    </div>
+
+    <div>
+      <label>Position:</label><br>
+      <select name="position">
+        <option value="">All positions</option>
+        <option value="GK" {% if selected_position == "GK" %}selected{% endif %}>Goalkeeper</option>
+        <option value="DF" {% if selected_position == "DF" %}selected{% endif %}>Defender</option>
+        <option value="MF" {% if selected_position == "MF" %}selected{% endif %}>Midfielder</option>
+        <option value="FW" {% if selected_position == "FW" %}selected{% endif %}>Forward</option>
+      </select>
+    </div>
+
+    <div style="align-self: flex-end;">
+      <button type="submit">Filter</button>
+      <a href="{% url 'player_list' %}" style="margin-left: 10px;">Reset</a>
+    </div>
+  </form>
+
+  <!-- PLAYER LIST -->
+  {% if players %}
+    <table border="1" cellpadding="8" cellspacing="0" style="width:100%; border-collapse:collapse;">
+      <thead>
+        <tr>
+          <th>Photo</th>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Number</th>
+          <th>Country</th>
+          <th>Club</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for player in players %}
+        <tr>
+          <td>
+            {% if player.player_photo %}
+              <img src="{{ player.player_photo.url }}" alt="{{ player.player_name }}" width="60" height="60" style="object-fit:cover; border-radius:50%;">
+            {% else %}
+              <span style="color:gray;">No photo</span>
+            {% endif %}
+          </td>
+          <td>{{ player.player_name }}</td>
+          <td>{{ player.get_player_position_display }}</td>
+          <td>{{ player.player_number }}</td>
+          <td>{{ player.player_country }}</td>
+          <td>{{ player.player_club.club_name }}</td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No players found.</p>
+  {% endif %}
+
+  <div style="margin-top: 20px;">
+    <a href="{% url 'add_player' %}">➕ Add new player</a> |
+    <a href="{% url 'home' %}">🏠 Home</a>
+  </div>
+
+</div>
+{% endblock %}

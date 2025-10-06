@@ -1,0 +1,81 @@
+player_name,player_position,player_number,player_club,player_country
+Robert Sánchez,GK,1,Chelsea,Spain
+Trevoh Chalobah,DF,14,Chelsea,England
+Reece James,DF,24,Chelsea,England
+Moisés Caicedo,MF,25,Chelsea,Ecuador
+Romeo Lavia,MF,18,Chelsea,Belgium
+Noni Madueke,FW,11,Chelsea,England
+Raheem Sterling,FW,7,Chelsea,England
+Malo Gusto,DF,22,Chelsea,France
+Carney Chukwuemeka,MF,17,Chelsea,England
+Mykhailo Mudryk,FW,19,Chelsea,Ukraine
+Thibaut Courtois,GK,1,Real Madrid,Belgium
+Éder Militão,DF,3,Real Madrid,Brazil
+David Alaba,DF,4,Real Madrid,Austria
+Antonio Rüdiger,DF,22,Real Madrid,Germany
+Aurélien Tchouaméni,MF,18,Real Madrid,France
+Luka Modrić,MF,10,Real Madrid,Croatia
+Eduardo Camavinga,MF,12,Real Madrid,France
+Vinícius Júnior,FW,20,Real Madrid,Brazil
+Rodrygo,FW,9,Real Madrid,Brazil
+Joselu,FW,17,Real Madrid,Spain
+Marc-André ter Stegen,GK,1,Barcelona,Germany
+Jules Koundé,DF,23,Barcelona,France
+Andreas Christensen,DF,15,Barcelona,Denmark
+Alejandro Balde,DF,28,Barcelona,Spain
+Frenkie de Jong,MF,21,Barcelona,Netherlands
+Gavi,MF,30,Barcelona,Spain
+Pedri,MF,16,Barcelona,Spain
+Anssumane Fati,FW,10,Barcelona,Spain
+Raphinha,FW,11,Barcelona,Brazil
+Ousmane Dembélé,FW,7,Barcelona,France
+Manuel Neuer,GK,1,Bayern Munich,Germany
+Joshua Kimmich,MF,6,Bayern Munich,Germany
+Leon Goretzka,MF,8,Bayern Munich,Germany
+Jamal Musiala,MF,10,Bayern Munich,Germany
+Thomas Müller,FW,25,Bayern Munich,Germany
+Kingsley Coman,FW,29,Bayern Munich,France
+Serge Gnabry,FW,7,Bayern Munich,Germany
+Benjamin Pavard,DF,5,Bayern Munich,France
+Dayot Upamecano,DF,2,Bayern Munich,France
+Sadio Mané,FW,17,Bayern Munich,Senegal
+Gianluigi Donnarumma,GK,1,PSG,Italy
+Marquinhos,DF,5,PSG,Brazil
+Achraf Hakimi,DF,2,PSG,Morocco
+Nuno Mendes,DF,26,PSG,Portugal
+Marco Verratti,MF,6,PSG,Italy
+Vitinha,MF,17,PSG,Portugal
+Carlos Soler,MF,28,PSG,Spain
+Lionel Messi,FW,30,PSG,Argentina
+Kylian Mbappé,FW,7,PSG,France
+Neymar,FW,10,PSG,Brazil
+Alisson Becker,GK,1,Liverpool,Brazil
+Trent Alexander-Arnold,DF,66,Liverpool,England
+Virgil van Dijk,DF,4,Liverpool,Netherlands
+Ibrahima Konaté,DF,5,Liverpool,France
+Fabinho,MF,3,Liverpool,Brazil
+Jordan Henderson,MF,14,Liverpool,England
+Thiago Alcântara,MF,6,Liverpool,Spain
+Darwin Núñez,FW,9,Liverpool,Uruguay
+Luis Díaz,FW,23,Liverpool,Colombia
+Cody Gakpo,FW,17,Liverpool,Netherlands
+Aaron Ramsdale,GK,1,Arsenal,England
+Ben White,DF,4,Arsenal,England
+Gabriel Magalhães,DF,6,Arsenal,Brazil
+Oleksandr Zinchenko,DF,35,Arsenal,Ukraine
+Thomas Partey,MF,5,Arsenal,Ghana
+Martin Ødegaard,MF,8,Arsenal,Norway
+Granit Xhaka,MF,34,Arsenal,Switzerland
+Gabriel Jesus,FW,9,Arsenal,Brazil
+Bukayo Saka,FW,7,Arsenal,England
+Eddie Nketiah,FW,14,Arsenal,England
+Ederson,GK,1,Manchester City,Brazil
+Kyle Walker,DF,2,Manchester City,England
+Ruben Dias,DF,3,Manchester City,Portugal
+John Stones,DF,5,Manchester City,England
+Rodri,MF,16,Manchester City,Spain
+Kevin De Bruyne,MF,17,Manchester City,Belgium
+Ilkay Gündogan,MF,8,Manchester City,Germany
+Phil Foden,FW,47,Manchester City,England
+Erling Haaland,FW,9,Manchester City,Norway
+Jack Grealish,FW,10,Manchester City,England

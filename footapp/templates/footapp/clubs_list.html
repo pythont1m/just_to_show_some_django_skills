@@ -1,23 +1,41 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Clubs List</title>
-</head>
-<body>
-    <h1>Clubs</h1>
-    <a href="{% url 'home' %}">Back to Home</a>
-    <ul>
+{% extends 'footapp/base.html' %}
+{% block title %}Clubs | Football App{% endblock %}
+
+{% block content %}
+<h2 class="text-3xl font-bold mb-6 text-blue-800">Clubs</h2>
+
+<table class="min-w-full bg-white shadow-md rounded-xl overflow-hidden">
+    <thead class="bg-green-600 text-white">
+        <tr>
+            <th class="py-3 px-4 text-left">Logo</th>
+            <th class="py-3 px-4 text-left">Name</th>
+            <th class="py-3 px-4 text-left">Country</th>
+            <th class="py-3 px-4 text-left">City</th>
+            <th class="py-3 px-4 text-left">Coach</th>
+            <th class="py-3 px-4 text-left">Capacity</th>
+        </tr>
+    </thead>
+    <tbody>
         {% for club in clubs %}
-            <li>
-                {{ club.club_name }} — {{ club.club_city }}, {{ club.club_country }}
-                {% if club.club_photo %}
-                    <br>
-                    <img src="{{ club.club_photo.url }}" width="100">
+        <tr class="border-b hover:bg-gray-50">
+            <td class="py-2 px-4">
+                {% if club.club_logo %}
+                    <img src="{{ club.club_logo.url }}" alt="{{ club.club_name }}" class="w-12 h-12 rounded-full object-cover">
+                {% else %}
+                    <span class="text-gray-400">No logo</span>
                 {% endif %}
-            </li>
+            </td>
+            <td class="py-2 px-4 font-medium">{{ club.club_name }}</td>
+            <td class="py-2 px-4">{{ club.club_country }}</td>
+            <td class="py-2 px-4">{{ club.club_city }}</td>
+            <td class="py-2 px-4">{{ club.club_coach }}</td>
+            <td class="py-2 px-4">{{ club.club_capacity }}</td>
+        </tr>
         {% empty %}
-            <li>No clubs available</li>
+        <tr>
+            <td colspan="6" class="py-4 text-center text-gray-500">No clubs found.</td>
+        </tr>
         {% endfor %}
-    </ul>
-</body>
-</html>
+    </tbody>
+</table>
+{% endblock %}

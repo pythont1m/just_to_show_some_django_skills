@@ -1,12 +1,35 @@
 from django.shortcuts import render, redirect
-from .models import Players, Clubs
+from .models import Players, Clubs, positions
 from .forms import PlayerForm, ClubForm
 
 def home(request):
     return render(request, 'footapp/home.html')
 
 def player_list(request):
-    return render(request, 'footapp/player_list.html', {'players': Players.objects.all()})
+    players = Players.objects.all()
+    clubs = Clubs.objects.all()
+
+    country = request.GET.get('country')
+    club_id = request.GET.get('club')
+    position = request.GET.get('position')
+
+    if country:
+        players = players.filter(player_country=country)
+    if club_id:
+        players = players.filter(player_club_id=club_id)
+    if position:
+        players = players.filter(player_position=position)
+
+    context = {
+        'players': players,
+        'clubs': clubs,
+        'selected_country': country or '',
+        'selected_club': club_id or '',
+        'selected_position': position or '',
+    }
+
+    return render(request, 'footapp/player_list.html', context)
+
 
 def club_list(request):
     return render(request, 'footapp/clubs_list.html', {'clubs': Clubs.objects.all()})
