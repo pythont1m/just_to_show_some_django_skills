@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Players List</title>
+</head>
+<body>
+    <h1>Players</h1>
+    <a href="{% url 'home' %}">Back to Home</a>
+    <ul>
+        {% for player in players %}
+            <li>
+                {{ player.player_name }} — {{ player.player_position }} — {{ player.player_club.club_name }}
+                {% if player.player_photo %}
+                    <br>
+                    <img src="{{ player.player_photo.url }}" width="100">
+                {% endif %}
+            </li>
+        {% empty %}
+            <li>No players available</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Clubs List</title>
+</head>
+<body>
+    <h1>Clubs</h1>
+    <a href="{% url 'home' %}">Back to Home</a>
+    <ul>
+        {% for club in clubs %}
+            <li>
+                {{ club.club_name }} — {{ club.club_city }}, {{ club.club_country }}
+                {% if club.club_photo %}
+                    <br>
+                    <img src="{{ club.club_photo.url }}" width="100">
+                {% endif %}
+            </li>
+        {% empty %}
+            <li>No clubs available</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
